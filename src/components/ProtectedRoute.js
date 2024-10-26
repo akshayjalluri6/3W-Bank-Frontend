@@ -1,14 +1,14 @@
-// src/components/ProtectedRoute.js
-import React from 'react';
-import { Route, Navigate } from 'react-router-dom';
+import { Navigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
-const ProtectedRoute = ({ component: Component, isAuthenticated, ...rest }) => {
-    return (
-        <Route
-            {...rest}
-            element={isAuthenticated ? <Component /> : <Navigate to="/login" />}
-        />
-    );
-};
+const ProtectedRoute = ({element: Component}) => {
+    const token = Cookies.get('token');
 
-export default ProtectedRoute;
+    if(token === undefined) {
+        return <Navigate to="/login" />
+    }
+
+    return Component
+}
+
+export default ProtectedRoute

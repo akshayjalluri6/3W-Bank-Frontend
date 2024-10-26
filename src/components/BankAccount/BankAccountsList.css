@@ -1,0 +1,66 @@
+/* BankAccountsList.css */
+
+.bank-accounts-list {
+    padding: 15px;
+    margin-bottom: 12px;
+    background-color: #ffffff; /* Background color */
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+}
+
+.bank-accounts-list:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.bank-accounts-header {
+    display: flex; /* Align bank name and button in a row */
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Center vertically */
+}
+
+.bank-accounts-list h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #3498db; /* Accent color */
+    margin: 0; /* No margin */
+}
+
+.delete-button {
+    background-color: transparent; /* Transparent background */
+    border: none; /* No border */
+    color: #e74c3c; /* Red color for delete */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.2rem; /* Font size */
+    transition: color 0.2s; /* Transition for color change */
+}
+
+.delete-button:hover {
+    color: #c0392b; /* Darker red on hover */
+}
+
+.bank-accounts-list p {
+    font-size: 1rem;
+    color: #555; /* Text color */
+    margin: 3px 0; /* Margin */
+}
+
+.btn-edit-con {
+    margin-left: auto;
+}
+
+.btn-edit {
+    font-size: 1.2rem;
+    color: #3498db; /* Accent color */
+    cursor: pointer;
+    transition: color 0.2s; /* Transition for color change */
+}
+
+.button-edit{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.bg-login-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #314782;
+    font-family: "Poppins", sans-serif;
+    padding: 20px;
+}
+
+.login-form-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Restrict width for better appearance */
+}
+
+.wavehand {
+    font-size: 50px;
+    text-align: center;
+    color: #314782; /* Matching color scheme */
+}
+
+.login-heading {
+    font-size: 24px;
+    color: #314782;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #314782;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #4b6bba; /* Lighten button on hover */
+    box-shadow: 0 0 10px rgba(75, 107, 186, 0.5); 
+}
+
+.form-control {
+    position: relative;
+    margin: 20px 0;
+}
+
+.form-control input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px #314782 solid;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+    color: #314782;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    outline: none;
+    border-bottom-color: #4b6bba;
+}
+
+.form-control label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    color: #314782;
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+    color: #4b6bba;
+    transform: translateY(-20px);
+}
+
+p {
+    color: #314782;
+    text-align: center;
+}
+
+p a {
+    text-decoration: none;
+    color: #4b6bba;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
