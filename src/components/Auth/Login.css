@@ -42,6 +42,7 @@
 .login-form {
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .login-btn {
