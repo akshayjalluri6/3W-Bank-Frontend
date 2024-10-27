@@ -3,6 +3,7 @@ import './EditBankAccount.css'
 import Cookies from 'js-cookie'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const EditBankAccount = () => {
     const {id} = useParams()
@@ -37,12 +38,16 @@ const EditBankAccount = () => {
                 }
             })
             if (response.status === 200){
-                window.location.href = '/'
+                toast.success('Bank details updated successfully')
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 1000)
             }
             else{
-                alert('Something went wrong, please try again')
+                toast.error('Something went wrong, please try again')
             }
         } catch (error) {
+            toast.error('Something went wrong, please try again')
             console.log(error);
         }
     }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import './Register.css'; // CSS file import
 
 const Register = () => {
@@ -31,9 +32,11 @@ const Register = () => {
             });
 
             if (response.status === 200) {
+                toast.success("Registration successful");
                 onSubmitSuccess(response.data);
             }
         } catch (error) {
+            toast.error("Registration failed, Please fill all the details");
             console.log(error);
         }
     };

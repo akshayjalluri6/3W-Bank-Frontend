@@ -3,6 +3,7 @@ import Cookies from 'js-cookie';
 import axios from 'axios';
 import './AddBankAccount.css';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const AddBankAccount = () => {
     const [formData, setFormData] = useState({
@@ -40,10 +41,13 @@ const AddBankAccount = () => {
             });
 
             console.log(response.data);
-
-            navigate('/');
+            toast.success('Bank details added successfully')
+            setTimeout(() => {
+                navigate('/')
+            }, 1000);
         } catch (error) {
             console.log(error);
+            toast.error('Something went wrong, please try again')
         }
     };
 

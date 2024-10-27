@@ -4,6 +4,7 @@ import Cookies from 'js-cookie'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import BankAccountsList from '../BankAccount/BankAccountsList';
+import { toast } from 'react-toastify';
 
 const UserDashboard = () => {
     const [bankAccountDetails, setBankAccountDetails] = useState()
@@ -30,12 +31,17 @@ const UserDashboard = () => {
     }, [])
 
     const onLogout = () => {
-        Cookies.remove('token')
-        Cookies.remove('isAdmin')
-        Cookies.remove('username')
-        Cookies.remove('user_id')
-        window.location.href = '/'
-    }
+        toast.success("Logout successful");
+        Cookies.remove('token');
+        Cookies.remove('isAdmin');
+        Cookies.remove('username');
+        Cookies.remove('user_id');
+        
+        setTimeout(() => {
+            window.location.href = '/';
+        }, 1000); // Delay of 1 second
+    };
+    
 
     return(
         <div className="dashboard-container">

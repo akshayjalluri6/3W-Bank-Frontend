@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from 'js-cookie';
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import './Login.css';
 
 const Login = () => {
@@ -38,10 +39,12 @@ const Login = () => {
             });
 
             if (response.status === 200) {
+                toast.success("Login successful");
                 onSubmitSuccess(response.data);
             }
 
         } catch (error) {
+            toast.error("Invalid credentials");
             console.log(error);
         }
     };

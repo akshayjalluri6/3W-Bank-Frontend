@@ -3,6 +3,7 @@ import './BankAccountsList.css';
 import { AiFillEdit } from "react-icons/ai";
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import { toast } from 'react-toastify';
 
 
 const BankAccountsList = ({ account }) => {
@@ -15,7 +16,10 @@ const BankAccountsList = ({ account }) => {
                 }
             });
             if (response.status === 200) {
-                window.location.href = '/'
+                toast.success('Bank details deleted successfully')
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1000);
             }
         } catch (error) {
             alert('Something went wrong, please try again')
